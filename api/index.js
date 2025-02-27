@@ -1,6 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import authRoute from "./routes/auth.js"
+import usersRoute from "./routes/users.js"
+import hotelRoute from "./routes/hotels.js"
+import roomsRoute from "./routes/rooms.js"
 const app = express()
 dotenv.config()
 
@@ -21,7 +25,14 @@ mongoose.connection.on("connected", ()=>{
     console.log("mongoDB connected!")
 })
 
+//middlewares
+app.use("/api/auth", authRoute);
+app.use("/api/users", usersRoute);
+app.use("/api/hotels", hotelRoute);
+app.use("/api/rooms", roomsRoute);
+
+
 app.listen(8800, ()=>{
-    connect()
-    console.log("Connected to backend!")
+    connect();
+    console.log("Connected to backend!");
 })
