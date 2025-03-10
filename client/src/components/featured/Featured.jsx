@@ -1,8 +1,17 @@
 import "./featured.css";
+import useFetch from "../../hooks/useFetch";
 
 const Featured = () => {
+  const { data, loading, error } = useFetch(
+    "/hotels/countByCity?cities=berlin,madrid,london"
+  );
+
   return (
     <div className="featured">
+      {loading ? (
+        "Loading please wait"
+      ) : (
+      <>
       <div className="featuredItem">
         <img
           src="https://img.goodfon.com/wallpaper/big/d/68/alicante-alikante-valencia.webp"
@@ -38,6 +47,8 @@ const Featured = () => {
           <h2>232 properties</h2>
         </div>
       </div>
+    </>
+    )}
     </div>
   );
 };
