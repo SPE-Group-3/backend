@@ -11,7 +11,7 @@ const Featured = () => {
       {loading ? (
         "Loading please wait"
       ) : (
-      <>
+        <>
       <div className="featuredItem">
         <img
           src="https://img.goodfon.com/wallpaper/big/d/68/alicante-alikante-valencia.webp"
@@ -21,7 +21,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Alicante</h1>
-          <h2>123 properties</h2>
+          <h2>123 properties {data[0]}</h2>
         </div>
       </div>
       
@@ -33,7 +33,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>Glasgow</h1>
-          <h2>413 properties</h2>
+          <h2>413 properties {data[0]}</h2>
         </div>
       </div>
       <div className="featuredItem">
@@ -44,7 +44,7 @@ const Featured = () => {
         />
         <div className="featuredTitles">
           <h1>mykonos</h1>
-          <h2>232 properties</h2>
+          <h2>232 properties {data[0]}</h2>
         </div>
       </div>
     </>
